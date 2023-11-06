@@ -1,0 +1,55 @@
+[gd_scene format=3 uid="uid://lx5oq0x6p5hx"]
+
+[node name="Start" type="Node2D"]
+
+[node name="StartButton" type="Button" parent="."]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 410.0
+offset_top = 410.0
+offset_right = 710.0
+offset_bottom = 470.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "Start"
+
+[node name="ConfigButton" type="Button" parent="."]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 410.0
+offset_top = 490.0
+offset_right = 710.0
+offset_bottom = 550.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "Options
+"
+
+[node name="ExitButton" type="Button" parent="."]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 410.0
+offset_top = 570.0
+offset_right = 710.0
+offset_bottom = 630.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "Exit"
+
+[node name="Title" type="Label" parent="."]
+offset_left = 203.0
+offset_top = 60.0
+offset_right = 932.0
+offset_bottom = 139.0
+theme_override_font_sizes/font_size = 55
+text = "NOME DE JOGO MTO LEGAL
+"

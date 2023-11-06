@@ -1,0 +1,154 @@
+[gd_scene load_steps=2 format=3 uid="uid://bbj1whrvq2jtx"]
+
+[ext_resource type="Script" path="res://Level Select/level_select.gd" id="1_nkh1x"]
+
+[node name="LevelSelect" type="Node2D"]
+script = ExtResource("1_nkh1x")
+
+[node name="Title" type="Label" parent="."]
+offset_left = 390.0
+offset_top = 51.0
+offset_right = 780.0
+offset_bottom = 111.0
+theme_override_font_sizes/font_size = 40
+text = "CHOOSE THE LEVEL: "
+
+[node name="ButtonLevel01" type="Button" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 43.0
+offset_top = 210.0
+offset_right = 233.0
+offset_bottom = 320.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Level 01"
+
+[node name="ButtonLevel02" type="Button" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 263.0
+offset_top = 210.0
+offset_right = 453.0
+offset_bottom = 320.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Level 02"
+
+[node name="ButtonLevel03" type="Button" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 483.0
+offset_top = 210.0
+offset_right = 673.0
+offset_bottom = 320.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Level 03"
+
+[node name="ButtonLevel04" type="Button" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 703.0
+offset_top = 210.0
+offset_right = 893.0
+offset_bottom = 320.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Level 04"
+
+[node name="ButtonLevel05" type="Button" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 923.0
+offset_top = 210.0
+offset_right = 1113.0
+offset_bottom = 320.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Level 05"
+
+[node name="ButtonLevel06" type="Button" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 43.0
+offset_top = 440.0
+offset_right = 233.0
+offset_bottom = 550.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Level 06"
+
+[node name="ButtonLevel07" type="Button" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 263.0
+offset_top = 440.0
+offset_right = 453.0
+offset_bottom = 550.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Level 07"
+
+[node name="ButtonLevel08" type="Button" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 483.0
+offset_top = 440.0
+offset_right = 673.0
+offset_bottom = 550.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Level 08"
+
+[node name="ButtonLevel09" type="Button" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 703.0
+offset_top = 440.0
+offset_right = 893.0
+offset_bottom = 550.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Level 09"
+
+[node name="ButtonLevel10" type="Button" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 923.0
+offset_top = 440.0
+offset_right = 1113.0
+offset_bottom = 550.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Level 10"
