@@ -1,0 +1,31 @@
+[gd_scene load_steps=3 format=3 uid="uid://dq0w2nwom0wpc"]
+
+[ext_resource type="PackedScene" uid="uid://b0a2l2q2jb60x" path="res://Player/player.tscn" id="1_hc0bc"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_udiuk"]
+size = Vector2(1082.5, 128)
+
+[node name="Level01" type="Node2D"]
+
+[node name="Panel" type="Panel" parent="."]
+offset_left = 43.0
+offset_top = 478.0
+offset_right = 1123.0
+offset_bottom = 620.0
+
+[node name="Label" type="Label" parent="."]
+offset_left = 11.0
+offset_top = 12.0
+offset_right = 946.0
+offset_bottom = 150.0
+theme_override_font_sizes/font_size = 30
+text = "MUNDO 01"
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(584.75, 542)
+shape = SubResource("RectangleShape2D_udiuk")
+
+[node name="Player" parent="." instance=ExtResource("1_hc0bc")]
+position = Vector2(484, 412)
