@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://bbj1whrvq2jtx"]
+[gd_scene load_steps=3 format=3 uid="uid://bbj1whrvq2jtx"]
 
 [ext_resource type="Script" path="res://Level Select/level_select.gd" id="1_nkh1x"]
+[ext_resource type="Texture2D" uid="uid://j5lg4ja0b55s" path="res://Assets/buttom.png" id="3_koa1s"]
 
 [node name="LevelSelect" type="Node2D"]
 script = ExtResource("1_nkh1x")
@@ -19,13 +20,25 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 43.0
+offset_left = 49.0
 offset_top = 210.0
-offset_right = 233.0
+offset_right = 219.0
 offset_bottom = 320.0
 grow_horizontal = 2
 grow_vertical = 2
-text = "Level 01"
+
+[node name="Sprite2D" type="Sprite2D" parent="ButtonLevel01"]
+position = Vector2(85, 57)
+texture = ExtResource("3_koa1s")
+
+[node name="Label" type="Label" parent="ButtonLevel01"]
+layout_mode = 0
+offset_left = 76.0
+offset_top = 43.0
+offset_right = 95.0
+offset_bottom = 69.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "01"
 
 [node name="ButtonLevel02" type="Button" parent="."]
 anchors_preset = 8
@@ -33,13 +46,26 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 263.0
+offset_left = 269.0
 offset_top = 210.0
-offset_right = 453.0
+offset_right = 439.0
 offset_bottom = 320.0
 grow_horizontal = 2
 grow_vertical = 2
-text = "Level 02"
+
+[node name="Sprite2D" type="Sprite2D" parent="ButtonLevel02"]
+position = Vector2(85, 57)
+texture = ExtResource("3_koa1s")
+
+[node name="Label" type="Label" parent="ButtonLevel02"]
+layout_mode = 0
+offset_left = 76.0
+offset_top = 43.0
+offset_right = 95.0
+offset_bottom = 69.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "02
+"
 
 [node name="ButtonLevel03" type="Button" parent="."]
 anchors_preset = 8
@@ -47,13 +73,27 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 483.0
-offset_top = 210.0
-offset_right = 673.0
-offset_bottom = 320.0
+offset_left = 492.0
+offset_top = 213.0
+offset_right = 662.0
+offset_bottom = 323.0
 grow_horizontal = 2
 grow_vertical = 2
 text = "Level 03"
+
+[node name="Sprite2D" type="Sprite2D" parent="ButtonLevel03"]
+position = Vector2(85, 56)
+texture = ExtResource("3_koa1s")
+
+[node name="Label" type="Label" parent="ButtonLevel03"]
+layout_mode = 0
+offset_left = 75.0
+offset_top = 42.0
+offset_right = 94.0
+offset_bottom = 68.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "03
+"
 
 [node name="ButtonLevel04" type="Button" parent="."]
 anchors_preset = 8
@@ -61,13 +101,25 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 703.0
+offset_left = 709.0
 offset_top = 210.0
-offset_right = 893.0
+offset_right = 879.0
 offset_bottom = 320.0
 grow_horizontal = 2
 grow_vertical = 2
-text = "Level 04"
+
+[node name="Sprite2D" type="Sprite2D" parent="ButtonLevel04"]
+position = Vector2(85, 56)
+texture = ExtResource("3_koa1s")
+
+[node name="Label" type="Label" parent="ButtonLevel04"]
+layout_mode = 0
+offset_left = 76.0
+offset_top = 42.0
+offset_right = 95.0
+offset_bottom = 68.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "04"
 
 [node name="ButtonLevel05" type="Button" parent="."]
 anchors_preset = 8
@@ -75,13 +127,25 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 923.0
+offset_left = 929.0
 offset_top = 210.0
-offset_right = 1113.0
+offset_right = 1099.0
 offset_bottom = 320.0
 grow_horizontal = 2
 grow_vertical = 2
-text = "Level 05"
+
+[node name="Sprite2D" type="Sprite2D" parent="ButtonLevel05"]
+position = Vector2(85, 56)
+texture = ExtResource("3_koa1s")
+
+[node name="Label" type="Label" parent="ButtonLevel05"]
+layout_mode = 0
+offset_left = 75.0
+offset_top = 42.0
+offset_right = 95.0
+offset_bottom = 68.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "05"
 
 [node name="ButtonLevel06" type="Button" parent="."]
 anchors_preset = 8
@@ -89,13 +153,25 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 43.0
-offset_top = 440.0
-offset_right = 233.0
-offset_bottom = 550.0
+offset_left = 54.0
+offset_top = 447.0
+offset_right = 224.0
+offset_bottom = 557.0
 grow_horizontal = 2
 grow_vertical = 2
-text = "Level 06"
+
+[node name="Sprite2D" type="Sprite2D" parent="ButtonLevel06"]
+position = Vector2(85, 57)
+texture = ExtResource("3_koa1s")
+
+[node name="Label" type="Label" parent="ButtonLevel06"]
+layout_mode = 0
+offset_left = 76.0
+offset_top = 43.0
+offset_right = 95.0
+offset_bottom = 69.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "06"
 
 [node name="ButtonLevel07" type="Button" parent="."]
 anchors_preset = 8
@@ -103,13 +179,25 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 263.0
-offset_top = 440.0
-offset_right = 453.0
-offset_bottom = 550.0
+offset_left = 274.0
+offset_top = 447.0
+offset_right = 444.0
+offset_bottom = 557.0
 grow_horizontal = 2
 grow_vertical = 2
-text = "Level 07"
+
+[node name="Sprite2D" type="Sprite2D" parent="ButtonLevel07"]
+position = Vector2(85, 57)
+texture = ExtResource("3_koa1s")
+
+[node name="Label" type="Label" parent="ButtonLevel07"]
+layout_mode = 0
+offset_left = 75.0
+offset_top = 43.0
+offset_right = 94.0
+offset_bottom = 69.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "07"
 
 [node name="ButtonLevel08" type="Button" parent="."]
 anchors_preset = 8
@@ -117,13 +205,25 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 483.0
-offset_top = 440.0
-offset_right = 673.0
-offset_bottom = 550.0
+offset_left = 494.0
+offset_top = 447.0
+offset_right = 664.0
+offset_bottom = 557.0
 grow_horizontal = 2
 grow_vertical = 2
-text = "Level 08"
+
+[node name="Sprite2D" type="Sprite2D" parent="ButtonLevel08"]
+position = Vector2(85, 57)
+texture = ExtResource("3_koa1s")
+
+[node name="Label" type="Label" parent="ButtonLevel08"]
+layout_mode = 0
+offset_left = 76.0
+offset_top = 43.0
+offset_right = 95.0
+offset_bottom = 69.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "08"
 
 [node name="ButtonLevel09" type="Button" parent="."]
 anchors_preset = 8
@@ -131,13 +231,25 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 703.0
-offset_top = 440.0
-offset_right = 893.0
-offset_bottom = 550.0
+offset_left = 714.0
+offset_top = 447.0
+offset_right = 884.0
+offset_bottom = 557.0
 grow_horizontal = 2
 grow_vertical = 2
-text = "Level 09"
+
+[node name="Sprite2D" type="Sprite2D" parent="ButtonLevel09"]
+position = Vector2(85, 57)
+texture = ExtResource("3_koa1s")
+
+[node name="Label" type="Label" parent="ButtonLevel09"]
+layout_mode = 0
+offset_left = 76.0
+offset_top = 43.0
+offset_right = 95.0
+offset_bottom = 69.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "09"
 
 [node name="ButtonLevel10" type="Button" parent="."]
 anchors_preset = 8
@@ -145,12 +257,28 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 923.0
-offset_top = 440.0
-offset_right = 1113.0
-offset_bottom = 550.0
+offset_left = 934.0
+offset_top = 447.0
+offset_right = 1104.0
+offset_bottom = 557.0
 grow_horizontal = 2
 grow_vertical = 2
-text = "Level 10"
+
+[node name="Sprite2D" type="Sprite2D" parent="ButtonLevel10"]
+position = Vector2(85, 57)
+texture = ExtResource("3_koa1s")
+
+[node name="Label" type="Label" parent="ButtonLevel10"]
+layout_mode = 0
+offset_left = 76.0
+offset_top = 43.0
+offset_right = 95.0
+offset_bottom = 69.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "10"
+
+[node name="Buttom" type="Sprite2D" parent="."]
+position = Vector2(367, 262)
+scale = Vector2(1.05208, 1)
 
 [connection signal="pressed" from="ButtonLevel01" to="." method="_on_button_level_01_pressed"]
