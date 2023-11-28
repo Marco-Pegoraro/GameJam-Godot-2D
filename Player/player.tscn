@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://b0a2l2q2jb60x"]
+[gd_scene load_steps=27 format=3 uid="uid://b0a2l2q2jb60x"]
 
 [ext_resource type="Texture2D" uid="uid://cp4j717fqmh0u" path="res://SunnyLand Assets/PNG/sprites/player/idle/player-idle-1.png" id="1_pqk33"]
 [ext_resource type="Texture2D" uid="uid://fnqh2sstcpop" path="res://SunnyLand Assets/PNG/sprites/player/hurt/player-hurt-1.png" id="1_tce2t"]
@@ -15,9 +15,12 @@
 [ext_resource type="Texture2D" uid="uid://bgpmdqp1hm5pu" path="res://SunnyLand Assets/PNG/sprites/player/run/player-run-4.png" id="12_83kw7"]
 [ext_resource type="Texture2D" uid="uid://brctem88xv64i" path="res://SunnyLand Assets/PNG/sprites/player/run/player-run-5.png" id="13_2s1kx"]
 [ext_resource type="Texture2D" uid="uid://djgeov1p8fk18" path="res://SunnyLand Assets/PNG/sprites/player/run/player-run-6.png" id="14_yhaqi"]
+[ext_resource type="AudioStream" uid="uid://spos8glvg2vo" path="res://Sound Effects/player-jump.mp3" id="16_kxta0"]
+[ext_resource type="AudioStream" uid="uid://bfwpleovfy1xt" path="res://Sound Effects/player-death.mp3" id="17_0mwfp"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_04cek"]
-size = Vector2(19, 23)
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_kcoc0"]
+radius = 8.5
+height = 25.0
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_qw8xv"]
 animations = [{
@@ -84,6 +87,34 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="Animation" id="Animation_xx2p3"]
+resource_name = "Fall"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"Jump"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimatedSprite2D:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
+}
+
 [sub_resource type="Animation" id="Animation_ootfx"]
 resource_name = "Idle"
 length = 0.4
@@ -114,6 +145,31 @@ tracks/1/keys = {
 
 [sub_resource type="Animation" id="Animation_bb622"]
 resource_name = "Jump"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"Jump"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimatedSprite2D:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
 
 [sub_resource type="Animation" id="Animation_vil6p"]
 length = 0.001
@@ -170,8 +226,38 @@ tracks/1/keys = {
 "values": [0, 1, 2, 3, 4, 5]
 }
 
+[sub_resource type="Animation" id="Animation_uad6k"]
+resource_name = "Death"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"Death"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimatedSprite2D:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 0, 1]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_tajb3"]
 _data = {
+"Death": SubResource("Animation_uad6k"),
+"Fall": SubResource("Animation_xx2p3"),
 "Idle": SubResource("Animation_ootfx"),
 "Jump": SubResource("Animation_bb622"),
 "RESET": SubResource("Animation_vil6p"),
@@ -183,7 +269,7 @@ script = ExtResource("1_yhu7u")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-1.5, 4.5)
-shape = SubResource("RectangleShape2D_04cek")
+shape = SubResource("CapsuleShape2D_kcoc0")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_qw8xv")
@@ -193,10 +279,22 @@ animation = &"Idle"
 zoom = Vector2(1.6, 1.6)
 limit_left = 0
 limit_top = 0
-limit_right = 1151
-limit_bottom = 800
+limit_right = 2302
+limit_bottom = 645
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
 "": SubResource("AnimationLibrary_tajb3")
 }
+
+[node name="SoundEffects" type="Node" parent="."]
+
+[node name="JumpSfx" type="AudioStreamPlayer" parent="SoundEffects"]
+stream = ExtResource("16_kxta0")
+volume_db = -12.0
+pitch_scale = 0.9
+mix_target = 1
+
+[node name="DeathSfx" type="AudioStreamPlayer" parent="SoundEffects"]
+stream = ExtResource("17_0mwfp")
+volume_db = -10.0

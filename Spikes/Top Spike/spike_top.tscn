@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://bgsjwf3kvhjw5"]
+
+[ext_resource type="Script" path="res://Spikes/Top Spike/spike_top.gd" id="1_0ryiw"]
+[ext_resource type="Texture2D" uid="uid://bnnxddiecf35g" path="res://SunnyLand Assets/PNG/environment/props/spikes-top.png" id="1_hj67b"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hug4w"]
+size = Vector2(14, 10)
+
+[node name="SpikeTop" type="Node2D"]
+script = ExtResource("1_0ryiw")
+
+[node name="Spikes-top" type="Sprite2D" parent="."]
+texture = ExtResource("1_hj67b")
+
+[node name="Area2D" type="Area2D" parent="Spikes-top"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Spikes-top/Area2D"]
+shape = SubResource("RectangleShape2D_hug4w")
+
+[connection signal="body_entered" from="Spikes-top/Area2D" to="." method="_on_area_2d_body_entered"]
