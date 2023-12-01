@@ -33,3 +33,6 @@ offset_top = 524.0
 offset_right = 875.0
 offset_bottom = 614.0
 text = "Main Menu"
+
+[connection signal="pressed" from="ReplayButton" to="." method="_on_replay_button_pressed"]
+[connection signal="pressed" from="MainMenuButton" to="." method="_on_main_menu_button_pressed"]

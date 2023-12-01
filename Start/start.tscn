@@ -1,9 +1,15 @@
-[gd_scene load_steps=2 format=3 uid="uid://lx5oq0x6p5hx"]
+[gd_scene load_steps=3 format=3 uid="uid://lx5oq0x6p5hx"]
 
 [ext_resource type="Script" path="res://Start/start.gd" id="1_1v875"]
+[ext_resource type="Texture2D" uid="uid://dj67x6sqvw8mq" path="res://SunnyLand Assets/PNG/environment/layers/back.png" id="2_o7gsb"]
 
 [node name="Start" type="Node2D"]
 script = ExtResource("1_1v875")
+
+[node name="Back" type="Sprite2D" parent="."]
+position = Vector2(575, 323)
+scale = Vector2(2.9974, 2.7)
+texture = ExtResource("2_o7gsb")
 
 [node name="StartButton" type="Button" parent="."]
 anchors_preset = 7
@@ -53,6 +59,7 @@ offset_left = 203.0
 offset_top = 60.0
 offset_right = 932.0
 offset_bottom = 139.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 55
 text = "NOME DE JOGO MTO LEGAL
 "

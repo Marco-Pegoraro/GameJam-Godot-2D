@@ -1,16 +1,23 @@
-[gd_scene load_steps=3 format=3 uid="uid://bbj1whrvq2jtx"]
+[gd_scene load_steps=4 format=3 uid="uid://bbj1whrvq2jtx"]
 
 [ext_resource type="Script" path="res://Level Select/level_select.gd" id="1_nkh1x"]
+[ext_resource type="Texture2D" uid="uid://dj67x6sqvw8mq" path="res://SunnyLand Assets/PNG/environment/layers/back.png" id="2_xj77a"]
 [ext_resource type="Texture2D" uid="uid://j5lg4ja0b55s" path="res://Assets/buttom.png" id="3_koa1s"]
 
 [node name="LevelSelect" type="Node2D"]
 script = ExtResource("1_nkh1x")
+
+[node name="Back" type="Sprite2D" parent="."]
+position = Vector2(575, 323)
+scale = Vector2(2.9974, 2.7)
+texture = ExtResource("2_xj77a")
 
 [node name="Title" type="Label" parent="."]
 offset_left = 303.0
 offset_top = 73.0
 offset_right = 892.0
 offset_bottom = 159.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 60
 text = "CHOOSE THE LEVEL: "
 
@@ -150,3 +157,5 @@ text = "05"
 [connection signal="pressed" from="ButtonLevel01" to="." method="_on_button_level_01_pressed"]
 [connection signal="pressed" from="ButtonLevel02" to="." method="_on_button_level_02_pressed"]
 [connection signal="pressed" from="ButtonLevel03" to="." method="_on_button_level_03_pressed"]
+[connection signal="pressed" from="ButtonLevel04" to="." method="_on_button_level_04_pressed"]
+[connection signal="pressed" from="ButtonLevel05" to="." method="_on_button_level_05_pressed"]

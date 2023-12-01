@@ -36,7 +36,6 @@ var customCursor = load("res://Assets/cursor.png");
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	
 	Input.set_custom_mouse_cursor(customCursor);
 
 
@@ -77,12 +76,25 @@ func _process(delta):
 
 
 func _on_button_level_01_pressed():
+	Utils.playerPhase = 1;
 	get_tree().change_scene_to_file("res://Levels/Level01/level_01.tscn");
 
 
 func _on_button_level_02_pressed():
-	get_tree().change_scene_to_file("res://Levels/Level02/level_02.tscn");
+	Utils.playerPhase = 2;
+	get_tree().change_scene_to_file("res://Levels/Level01/level_01.tscn");
 
 
 func _on_button_level_03_pressed():
-	get_tree().change_scene_to_file("res://Levels/Level03/level_03.tscn");
+	Utils.playerPhase = 3;
+	get_tree().change_scene_to_file("res://Levels/Level01/level_01.tscn");
+
+
+func _on_button_level_04_pressed():
+	Utils.playerPhase = 4;
+	get_tree().change_scene_to_file("res://Levels/Level01/level_01.tscn");
+
+
+func _on_button_level_05_pressed():
+	Utils.playerPhase = 5;
+	get_tree().change_scene_to_file("res://Levels/Level01/level_01.tscn");
