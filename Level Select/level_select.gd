@@ -36,43 +36,80 @@ var customCursor = load("res://Assets/cursor.png");
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE);
+	
 	Input.set_custom_mouse_cursor(customCursor);
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	if button01.is_hovered():
-		sprite01.texture = load("res://Assets/buttom_hover.png");
-	else:
-		sprite01.texture = load("res://Assets/buttom.png");
+	if(Utils.phaseComplete01 == false):
+		if(button01.is_hovered()):
+			sprite01.texture = load("res://Assets/button_hover.png");
+		else:
+			sprite01.texture = load("res://Assets/button.png");
+	
+	if(Utils.phaseComplete01 == true):
+		if(button01.is_hovered()):
+			sprite01.texture = load("res://Assets/button_complete_hover.png");
+		else:
+			sprite01.texture = load("res://Assets/button_complete.png");
 	
 	#==============================================
 	
-	if button02.is_hovered():
-		sprite02.texture = load("res://Assets/buttom_hover.png");
-	else:
-		sprite02.texture = load("res://Assets/buttom.png");
+	if(Utils.phaseComplete02 == false):
+		if button02.is_hovered():
+			sprite02.texture = load("res://Assets/button_hover.png");
+		else:
+			sprite02.texture = load("res://Assets/button.png");
+	
+	if(Utils.phaseComplete02 == true):
+		if(button02.is_hovered()):
+			sprite02.texture = load("res://Assets/button_complete_hover.png");
+		else:
+			sprite02.texture = load("res://Assets/button_complete.png");
 	
 	#==============================================
 	
-	if button03.is_hovered():
-		sprite03.texture = load("res://Assets/buttom_hover.png");
-	else:
-		sprite03.texture = load("res://Assets/buttom.png");
+	if(Utils.phaseComplete03 == false):
+		if(button03.is_hovered() and Utils.phaseComplete03 == false):
+			sprite03.texture = load("res://Assets/button_hover.png");
+		else:
+			sprite03.texture = load("res://Assets/button.png");
+	
+	if(Utils.phaseComplete03 == true):
+		if(button03.is_hovered()):
+			sprite03.texture = load("res://Assets/button_complete_hover.png");
+		else:
+			sprite03.texture = load("res://Assets/button_complete.png");
 	
 	#==============================================
 	
-	if button04.is_hovered():
-		sprite04.texture = load("res://Assets/buttom_hover.png");
-	else:
-		sprite04.texture = load("res://Assets/buttom.png");
+	if(Utils.phaseComplete04 == false):
+		if button04.is_hovered():
+			sprite04.texture = load("res://Assets/button_hover.png");
+		else:
+			sprite04.texture = load("res://Assets/button.png");
+	
+	if(Utils.phaseComplete04 == true):
+		if(button04.is_hovered()):
+			sprite04.texture = load("res://Assets/button_complete_hover.png");
+		else:
+			sprite04.texture = load("res://Assets/button_complete.png");
 	
 	#==============================================
 	
-	if button05.is_hovered():
-		sprite05.texture = load("res://Assets/buttom_hover.png");
-	else:
-		sprite05.texture = load("res://Assets/buttom.png");
+	if(Utils.phaseComplete05 == false):
+		if button05.is_hovered():
+			sprite05.texture = load("res://Assets/button_hover.png");
+		else:
+			sprite05.texture = load("res://Assets/button.png");
+	
+	if(Utils.phaseComplete05 == true):
+		if(button05.is_hovered()):
+			sprite05.texture = load("res://Assets/button_complete_hover.png");
+		else:
+			sprite05.texture = load("res://Assets/button_complete.png");
 
 
 func _on_button_level_01_pressed():

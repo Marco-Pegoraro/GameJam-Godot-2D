@@ -1,0 +1,25 @@
+[gd_scene load_steps=5 format=3 uid="uid://bb030s4dj13p2"]
+
+[ext_resource type="Texture2D" uid="uid://dj67x6sqvw8mq" path="res://SunnyLand Assets/PNG/environment/layers/back.png" id="1_p2wp1"]
+[ext_resource type="PackedScene" uid="uid://dx4wmbh2vebhq" path="res://Region Select/Region West/region_west.tscn" id="2_rnh2m"]
+[ext_resource type="PackedScene" uid="uid://q0b14rfs2lmc" path="res://Region Select/Region Middle/region_middle.tscn" id="3_jd8rf"]
+[ext_resource type="PackedScene" uid="uid://buh0u0j6806rr" path="res://Region Select/Region East/regio_east.tscn" id="4_wli2h"]
+
+[node name="RegionSelect" type="Node2D"]
+
+[node name="Back" type="Sprite2D" parent="."]
+position = Vector2(575.5, 324)
+scale = Vector2(2.9974, 2.7)
+texture = ExtResource("1_p2wp1")
+
+[node name="RegionWest" parent="." instance=ExtResource("2_rnh2m")]
+position = Vector2(304, 346)
+scale = Vector2(9, 9)
+
+[node name="RegionMiddle" parent="." instance=ExtResource("3_jd8rf")]
+position = Vector2(459, 364)
+scale = Vector2(9, 9)
+
+[node name="RegioEast" parent="." instance=ExtResource("4_wli2h")]
+position = Vector2(659, 373)
+scale = Vector2(9, 9)

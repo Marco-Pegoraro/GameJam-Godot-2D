@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://j5lg4ja0b55s"
-path="res://.godot/imported/buttom.png-7e96f9c9fd814b3f9af177b9fb9e3109.ctex"
+uid="uid://bpwq0tu8kxqpu"
+path="res://.godot/imported/Sprite-0002.png-71e99ff7ea5f0abcc6b356645727cde9.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/buttom.png"
-dest_files=["res://.godot/imported/buttom.png-7e96f9c9fd814b3f9af177b9fb9e3109.ctex"]
+source_file="res://Assets/City West/Sprite-0002.png"
+dest_files=["res://.godot/imported/Sprite-0002.png-71e99ff7ea5f0abcc6b356645727cde9.ctex"]
 
 [params]
 

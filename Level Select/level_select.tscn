@@ -1,8 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://bbj1whrvq2jtx"]
+[gd_scene load_steps=4 format=3 uid="uid://717fwueirjwq"]
 
 [ext_resource type="Script" path="res://Level Select/level_select.gd" id="1_nkh1x"]
 [ext_resource type="Texture2D" uid="uid://dj67x6sqvw8mq" path="res://SunnyLand Assets/PNG/environment/layers/back.png" id="2_xj77a"]
-[ext_resource type="Texture2D" uid="uid://j5lg4ja0b55s" path="res://Assets/buttom.png" id="3_koa1s"]
+[ext_resource type="Texture2D" uid="uid://j5lg4ja0b55s" path="res://Assets/button.png" id="3_rl04u"]
 
 [node name="LevelSelect" type="Node2D"]
 script = ExtResource("1_nkh1x")
@@ -36,7 +36,7 @@ grow_vertical = 2
 
 [node name="Sprite2D" type="Sprite2D" parent="ButtonLevel01"]
 position = Vector2(85, 57)
-texture = ExtResource("3_koa1s")
+texture = ExtResource("3_rl04u")
 
 [node name="Label" type="Label" parent="ButtonLevel01"]
 layout_mode = 0
@@ -62,7 +62,7 @@ grow_vertical = 2
 
 [node name="Sprite2D" type="Sprite2D" parent="ButtonLevel02"]
 position = Vector2(85, 57)
-texture = ExtResource("3_koa1s")
+texture = ExtResource("3_rl04u")
 
 [node name="Label" type="Label" parent="ButtonLevel02"]
 layout_mode = 0
@@ -90,7 +90,7 @@ text = "Level 03"
 
 [node name="Sprite2D" type="Sprite2D" parent="ButtonLevel03"]
 position = Vector2(85, 56)
-texture = ExtResource("3_koa1s")
+texture = ExtResource("3_rl04u")
 
 [node name="Label" type="Label" parent="ButtonLevel03"]
 layout_mode = 0
@@ -117,7 +117,7 @@ grow_vertical = 2
 
 [node name="Sprite2D" type="Sprite2D" parent="ButtonLevel04"]
 position = Vector2(85, 56)
-texture = ExtResource("3_koa1s")
+texture = ExtResource("3_rl04u")
 
 [node name="Label" type="Label" parent="ButtonLevel04"]
 layout_mode = 0
@@ -143,7 +143,7 @@ grow_vertical = 2
 
 [node name="Sprite2D" type="Sprite2D" parent="ButtonLevel05"]
 position = Vector2(85, 56)
-texture = ExtResource("3_koa1s")
+texture = ExtResource("3_rl04u")
 
 [node name="Label" type="Label" parent="ButtonLevel05"]
 layout_mode = 0

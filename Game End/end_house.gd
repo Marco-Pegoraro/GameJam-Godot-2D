@@ -13,4 +13,19 @@ func _process(delta):
 
 func _on_area_2d_body_entered(body):
 	if body.name == "Player":
-		print("Você chegou parabens");
+		if(Utils.playerPhase == 1):
+			Utils.phaseComplete01 = true;
+		
+		if(Utils.playerPhase == 2):
+			Utils.phaseComplete02 = true;
+		
+		if(Utils.playerPhase == 3):
+			Utils.phaseComplete03 = true;
+		
+		if(Utils.playerPhase == 4):
+			Utils.phaseComplete04 = true;
+		
+		if(Utils.playerPhase == 5):
+			Utils.phaseComplete05 = true;
+		
+		get_tree().change_scene_to_file("res://Level Select/level_select.tscn");
