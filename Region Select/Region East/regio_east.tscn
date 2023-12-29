@@ -1,55 +1,19 @@
-[gd_scene load_steps=10 format=3 uid="uid://buh0u0j6806rr"]
+[gd_scene load_steps=3 format=3 uid="uid://buh0u0j6806rr"]
 
 [ext_resource type="Script" path="res://Region Select/Region East/regio_east.gd" id="1_aa8bo"]
-[ext_resource type="Texture2D" uid="uid://citgfusacaf1y" path="res://Assets/City East/Sprite-0002.png" id="1_dh1xm"]
-[ext_resource type="Texture2D" uid="uid://dfm525an7ocwu" path="res://Assets/City East/Sprite-0003.png" id="2_7hhon"]
-[ext_resource type="Texture2D" uid="uid://q0af63xhd8e7" path="res://Assets/City East/Sprite-0004.png" id="3_p3hip"]
-[ext_resource type="Texture2D" uid="uid://c8h5y1fsxi6bt" path="res://Assets/City East/Sprite-0005.png" id="4_un5yr"]
-[ext_resource type="Texture2D" uid="uid://b2ynrob0sfwq" path="res://Assets/City East/Sprite-0006.png" id="5_a7nrh"]
-[ext_resource type="Texture2D" uid="uid://b2vyaxpfnshge" path="res://Assets/City East/Sprite-0007.png" id="6_4jiwt"]
-[ext_resource type="Texture2D" uid="uid://ragbbsnfj77" path="res://Assets/City East/Sprite-0008.png" id="7_us014"]
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_c0wkf"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("1_dh1xm")
-}, {
-"duration": 1.0,
-"texture": ExtResource("2_7hhon")
-}, {
-"duration": 1.0,
-"texture": ExtResource("3_p3hip")
-}, {
-"duration": 1.0,
-"texture": ExtResource("4_un5yr")
-}, {
-"duration": 1.0,
-"texture": ExtResource("5_a7nrh")
-}, {
-"duration": 1.0,
-"texture": ExtResource("6_4jiwt")
-}, {
-"duration": 1.0,
-"texture": ExtResource("7_us014")
-}],
-"loop": true,
-"name": &"Selected",
-"speed": 5.0
-}]
+[ext_resource type="Texture2D" uid="uid://cwocecdq116fb" path="res://Assets/sprite_masmorra.png" id="2_u0i8o"]
 
 [node name="RegioEast" type="Node2D"]
 script = ExtResource("1_aa8bo")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-sprite_frames = SubResource("SpriteFrames_c0wkf")
-animation = &"Selected"
+[node name="SpriteMasmorra" type="Sprite2D" parent="."]
+scale = Vector2(1, 0.9)
+texture = ExtResource("2_u0i8o")
 
-[node name="Area2D" type="Area2D" parent="."]
+[node name="Area2D" type="Area2D" parent="SpriteMasmorra"]
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
-visible = false
-polygon = PackedVector2Array(-13, 21, 0, 21, 12, 15, 16, 6, 16, -7, 10, -15, 6, -19, 0, -22, -14, -23, -8, -16, -12, -11, -9, 0, -9, 6, -11, 11, -15, 15)
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="SpriteMasmorra/Area2D"]
+polygon = PackedVector2Array(-43.25, 93.75, 27.5, 76, 57, 79.5, 65.5, 60, 66, -44, 70, -44, 70, -48, -7.5, -99.75, -87.75, -48, -87.25, -42, -80.75, -42.5, -81.5, 78, -77.25, 76.75, -68.5, 92)
 
-[connection signal="mouse_entered" from="Area2D" to="." method="_on_area_2d_mouse_entered"]
-[connection signal="mouse_exited" from="Area2D" to="." method="_on_area_2d_mouse_exited"]
+[connection signal="mouse_entered" from="SpriteMasmorra/Area2D" to="." method="_on_area_2d_mouse_entered"]
+[connection signal="mouse_exited" from="SpriteMasmorra/Area2D" to="." method="_on_area_2d_mouse_exited"]

@@ -1,69 +1,185 @@
-[gd_scene load_steps=3 format=3 uid="uid://lx5oq0x6p5hx"]
+[gd_scene load_steps=8 format=3 uid="uid://lx5oq0x6p5hx"]
 
 [ext_resource type="Script" path="res://Start/start.gd" id="1_1v875"]
-[ext_resource type="Texture2D" uid="uid://dj67x6sqvw8mq" path="res://SunnyLand Assets/PNG/environment/layers/back.png" id="2_o7gsb"]
+[ext_resource type="Texture2D" uid="uid://75lhjtv4qeuu" path="res://Assets/background.png" id="2_pnbow"]
+[ext_resource type="FontFile" uid="uid://prrtsjm0hg3m" path="res://Assets/Game Fonts/Pixel Font/PressStart2P.ttf" id="3_l630r"]
+[ext_resource type="Texture2D" uid="uid://ch68pxijlnc5b" path="res://Assets/option_selected.png" id="4_h4674"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_b4vlw"]
+size = Vector2(300, 60)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ptbe1"]
+size = Vector2(300, 60)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7ottw"]
+size = Vector2(300, 60)
 
 [node name="Start" type="Node2D"]
 script = ExtResource("1_1v875")
 
-[node name="Back" type="Sprite2D" parent="."]
-position = Vector2(575, 323)
-scale = Vector2(2.9974, 2.7)
-texture = ExtResource("2_o7gsb")
+[node name="Background" type="Sprite2D" parent="."]
+position = Vector2(576, 324)
+scale = Vector2(0.96, 0.864)
+texture = ExtResource("2_pnbow")
+
+[node name="Title" type="Label" parent="."]
+offset_left = 370.0
+offset_top = 35.0
+offset_right = 770.0
+offset_bottom = 151.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("3_l630r")
+theme_override_font_sizes/font_size = 55
+text = "Another 
+Castle"
+horizontal_alignment = 1
 
 [node name="StartButton" type="Button" parent="."]
+modulate = Color(1, 1, 1, 0)
+self_modulate = Color(1, 1, 1, 0)
 anchors_preset = 7
 anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = 410.0
-offset_top = 410.0
-offset_right = 710.0
-offset_bottom = 470.0
+offset_left = 18.0
+offset_top = 210.0
+offset_right = 318.0
+offset_bottom = 270.0
 grow_horizontal = 2
 grow_vertical = 0
+theme_override_fonts/font = ExtResource("3_l630r")
+theme_override_font_sizes/font_size = 40
 text = "Start"
 
-[node name="ConfigButton" type="Button" parent="."]
+[node name="Area2D" type="Area2D" parent="StartButton"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StartButton/Area2D"]
+position = Vector2(150, 30)
+shape = SubResource("RectangleShape2D_b4vlw")
+
+[node name="Start" type="Label" parent="."]
+offset_left = 68.0
+offset_top = 218.0
+offset_right = 268.0
+offset_bottom = 263.0
+theme_override_fonts/font = ExtResource("3_l630r")
+theme_override_font_sizes/font_size = 40
+text = "Start"
+vertical_alignment = 1
+text_direction = 1
+
+[node name="OptionButton" type="Button" parent="."]
+modulate = Color(1, 1, 1, 0)
+self_modulate = Color(1, 1, 1, 0)
 anchors_preset = 7
 anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = 410.0
-offset_top = 490.0
-offset_right = 710.0
-offset_bottom = 550.0
+offset_left = 18.0
+offset_top = 275.0
+offset_right = 318.0
+offset_bottom = 335.0
 grow_horizontal = 2
 grow_vertical = 0
+theme_override_fonts/font = ExtResource("3_l630r")
+theme_override_font_sizes/font_size = 25
 text = "Options
 "
 
-[node name="ExitButton" type="Button" parent="."]
+[node name="OptionArea" type="Area2D" parent="OptionButton"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="OptionButton/OptionArea"]
+position = Vector2(150, 30)
+shape = SubResource("RectangleShape2D_ptbe1")
+
+[node name="Options" type="Label" parent="."]
+offset_left = 80.0
+offset_top = 290.0
+offset_right = 255.0
+offset_bottom = 320.0
+theme_override_fonts/font = ExtResource("3_l630r")
+theme_override_font_sizes/font_size = 25
+text = "Options"
+vertical_alignment = 1
+
+[node name="QuitButton" type="Button" parent="."]
+modulate = Color(1, 1, 1, 0)
+self_modulate = Color(1, 1, 1, 0)
 anchors_preset = 7
 anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = 410.0
-offset_top = 570.0
-offset_right = 710.0
-offset_bottom = 630.0
+offset_left = 18.0
+offset_top = 340.0
+offset_right = 318.0
+offset_bottom = 400.0
 grow_horizontal = 2
 grow_vertical = 0
-text = "Exit"
+theme_override_fonts/font = ExtResource("3_l630r")
+theme_override_font_sizes/font_size = 25
+text = "Quit"
 
-[node name="Title" type="Label" parent="."]
-offset_left = 203.0
-offset_top = 60.0
-offset_right = 932.0
-offset_bottom = 139.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 55
-text = "NOME DE JOGO MTO LEGAL
-"
+[node name="QuitArea" type="Area2D" parent="QuitButton"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="QuitButton/QuitArea"]
+position = Vector2(150, 30)
+shape = SubResource("RectangleShape2D_7ottw")
+
+[node name="Quit" type="Label" parent="."]
+offset_left = 118.0
+offset_top = 355.0
+offset_right = 218.0
+offset_bottom = 385.0
+theme_override_fonts/font = ExtResource("3_l630r")
+theme_override_font_sizes/font_size = 25
+text = "Quit"
+vertical_alignment = 1
+
+[node name="StartSelected" type="Node" parent="."]
+
+[node name="OptionSelected" type="Sprite2D" parent="StartSelected"]
+position = Vector2(290, 240)
+scale = Vector2(2, 2)
+texture = ExtResource("4_h4674")
+
+[node name="OptionSelected2" type="Sprite2D" parent="StartSelected"]
+position = Vector2(40, 240)
+scale = Vector2(2, 2)
+texture = ExtResource("4_h4674")
+
+[node name="OptionSelected" type="Node" parent="."]
+
+[node name="OptionSelected" type="Sprite2D" parent="OptionSelected"]
+position = Vector2(275, 307)
+scale = Vector2(2, 2)
+texture = ExtResource("4_h4674")
+
+[node name="OptionSelected2" type="Sprite2D" parent="OptionSelected"]
+position = Vector2(55, 307)
+scale = Vector2(2, 2)
+texture = ExtResource("4_h4674")
+
+[node name="QuitSelected" type="Node" parent="."]
+
+[node name="OptionSelected" type="Sprite2D" parent="QuitSelected"]
+position = Vector2(240, 370)
+scale = Vector2(2, 2)
+texture = ExtResource("4_h4674")
+
+[node name="OptionSelected2" type="Sprite2D" parent="QuitSelected"]
+position = Vector2(90, 370)
+scale = Vector2(2, 2)
+texture = ExtResource("4_h4674")
 
 [connection signal="pressed" from="StartButton" to="." method="_on_start_button_pressed"]
-[connection signal="pressed" from="ConfigButton" to="." method="_on_config_button_pressed"]
-[connection signal="pressed" from="ExitButton" to="." method="_on_exit_button_pressed"]
+[connection signal="mouse_entered" from="StartButton/Area2D" to="." method="_on_area_2d_mouse_entered"]
+[connection signal="mouse_exited" from="StartButton/Area2D" to="." method="_on_area_2d_mouse_exited"]
+[connection signal="pressed" from="OptionButton" to="." method="_on_config_button_pressed"]
+[connection signal="mouse_entered" from="OptionButton/OptionArea" to="." method="_on_option_area_mouse_entered"]
+[connection signal="mouse_exited" from="OptionButton/OptionArea" to="." method="_on_option_area_mouse_exited"]
+[connection signal="pressed" from="QuitButton" to="." method="_on_exit_button_pressed"]
+[connection signal="mouse_entered" from="QuitButton/QuitArea" to="." method="_on_quit_area_mouse_entered"]
+[connection signal="mouse_exited" from="QuitButton/QuitArea" to="." method="_on_quit_area_mouse_exited"]

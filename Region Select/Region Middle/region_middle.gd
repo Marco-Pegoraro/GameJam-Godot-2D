@@ -1,44 +1,38 @@
 extends Node2D
 
-@onready
-var areaAnimation = get_node("AnimatedSprite2D");
+var originalSize := scale;
+
+var growSize := Vector2(1.2, 1.2);
+
+var alphaMin = 0;
+
+var alphaMax = 1;
+
+var alphaMutable = 0;
 
 @onready
-var shrink = false;
+var parchment = get_node("../Parchment");
 
 @onready
-var expand = false;
+var areaText = get_node("../MiddleText");
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
+
+func _ready():
+	parchment.set_self_modulate(Color(1, 1, 1, 0));
+	areaText.set_self_modulate(Color(1, 1, 1, 0));
 
 
 func _on_area_2d_mouse_entered():
-	expand = true;
-	shrink = false;
-	areaAnimation.play("Selected");
+	await grow_area(growSize, .3);
 	self.z_index = 1;
-	
-	while self.scale.x < 10:
-		self.scale.x += 0.1;
-		self.scale.y += 0.1;
-		await get_tree().create_timer(0.2).timeout;
-		
-		if(shrink == true):
-			break;
 
 
 func _on_area_2d_mouse_exited():
-	shrink = true;
-	expand = false;
-	areaAnimation.stop();
+	await grow_area(originalSize, .2);
 	self.z_index = 0;
+
+
+func grow_area(endSize: Vector2, duration: float) -> void:
+	var tween := create_tween().set_trans(Tween.TRANS_LINEAR).set_ease(Tween.EASE_IN_OUT);
 	
-	while self.scale.x > 9:
-		self.scale.x -= 0.1;
-		self.scale.y -= 0.1;
-		await get_tree().create_timer(0.1).timeout;
-		
-		if(expand == true):
-			break;
+	tween.tween_property(self, 'scale', endSize, duration);

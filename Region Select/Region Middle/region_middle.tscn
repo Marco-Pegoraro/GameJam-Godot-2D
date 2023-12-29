@@ -1,55 +1,19 @@
-[gd_scene load_steps=10 format=3 uid="uid://q0b14rfs2lmc"]
+[gd_scene load_steps=3 format=3 uid="uid://q0b14rfs2lmc"]
 
 [ext_resource type="Script" path="res://Region Select/Region Middle/region_middle.gd" id="1_u3s4g"]
-[ext_resource type="Texture2D" uid="uid://c14chhf66kxg8" path="res://Assets/City Middle/Sprite-0001.png" id="2_oa7b5"]
-[ext_resource type="Texture2D" uid="uid://c1fh3lol7pwx1" path="res://Assets/City Middle/Sprite-0002.png" id="3_n4utc"]
-[ext_resource type="Texture2D" uid="uid://bftdvht8oiwc3" path="res://Assets/City Middle/Sprite-0003.png" id="4_v4kb2"]
-[ext_resource type="Texture2D" uid="uid://dxeejsg4gifrj" path="res://Assets/City Middle/Sprite-0004.png" id="5_3801i"]
-[ext_resource type="Texture2D" uid="uid://n3fkjy2fbds3" path="res://Assets/City Middle/Sprite-0005.png" id="6_lmoqe"]
-[ext_resource type="Texture2D" uid="uid://ctmybkevopcii" path="res://Assets/City Middle/Sprite-0006.png" id="7_wfr64"]
-[ext_resource type="Texture2D" uid="uid://b73buhl7qsyhp" path="res://Assets/City Middle/Sprite-0007.png" id="8_77tbe"]
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_0g5jb"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("2_oa7b5")
-}, {
-"duration": 1.0,
-"texture": ExtResource("3_n4utc")
-}, {
-"duration": 1.0,
-"texture": ExtResource("4_v4kb2")
-}, {
-"duration": 1.0,
-"texture": ExtResource("5_3801i")
-}, {
-"duration": 1.0,
-"texture": ExtResource("6_lmoqe")
-}, {
-"duration": 1.0,
-"texture": ExtResource("7_wfr64")
-}, {
-"duration": 1.0,
-"texture": ExtResource("8_77tbe")
-}],
-"loop": true,
-"name": &"Selected",
-"speed": 5.0
-}]
+[ext_resource type="Texture2D" uid="uid://kfb1ffa5a6dh" path="res://Assets/torre_meio.png" id="2_jnbty"]
 
 [node name="RegionMiddle" type="Node2D"]
 script = ExtResource("1_u3s4g")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-sprite_frames = SubResource("SpriteFrames_0g5jb")
-animation = &"Selected"
+[node name="TorreMeio" type="Sprite2D" parent="."]
+scale = Vector2(0.955, 0.86)
+texture = ExtResource("2_jnbty")
 
-[node name="Area2D" type="Area2D" parent="."]
+[node name="Area2D" type="Area2D" parent="TorreMeio"]
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
-visible = false
-polygon = PackedVector2Array(7, 22, 5, 16, 10, 10, 11, 4, 8, -10, 11, -15, 6, -22, -4, -22, -9, -15, -3, -8, -8, -3, -8, 2, -4, 10, -10, 15, -5, 22)
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="TorreMeio/Area2D"]
+polygon = PackedVector2Array(-16, 220, -1, 221, 20, 200, 22, 83, 39, 85, 90, 52, 90, -3, 102, -3, 102, -9, 67, -46, 18, -51, 16, -125, 30, -126, -20, -194, -70, -128, -64, -123, -58, -124, -58, -53, -79, -52, -86, 9, -79, 9, -74, 156, -53, 156, -36, 170, -33, 196, -22, 200)
 
-[connection signal="mouse_entered" from="Area2D" to="." method="_on_area_2d_mouse_entered"]
-[connection signal="mouse_exited" from="Area2D" to="." method="_on_area_2d_mouse_exited"]
+[connection signal="mouse_entered" from="TorreMeio/Area2D" to="." method="_on_area_2d_mouse_entered"]
+[connection signal="mouse_exited" from="TorreMeio/Area2D" to="." method="_on_area_2d_mouse_exited"]

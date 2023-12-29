@@ -1,9 +1,8 @@
-[gd_scene load_steps=30 format=3 uid="uid://b0a2l2q2jb60x"]
+[gd_scene load_steps=29 format=3 uid="uid://b0a2l2q2jb60x"]
 
 [ext_resource type="Texture2D" uid="uid://cp4j717fqmh0u" path="res://SunnyLand Assets/PNG/sprites/player/idle/player-idle-1.png" id="1_pqk33"]
 [ext_resource type="Texture2D" uid="uid://fnqh2sstcpop" path="res://SunnyLand Assets/PNG/sprites/player/hurt/player-hurt-1.png" id="1_tce2t"]
 [ext_resource type="Script" path="res://Player/player.gd" id="1_yhu7u"]
-[ext_resource type="PackedScene" uid="uid://t8y7fjndqtga" path="res://Player/DashGhost/dash_ghost.tscn" id="2_b2qko"]
 [ext_resource type="Texture2D" uid="uid://cwxgr7k181xx1" path="res://SunnyLand Assets/PNG/sprites/player/idle/player-idle-2.png" id="2_ch2nu"]
 [ext_resource type="Texture2D" uid="uid://cl2j28wksuhrb" path="res://SunnyLand Assets/PNG/sprites/player/crouch/player-crouch-2.png" id="2_ldq4f"]
 [ext_resource type="Texture2D" uid="uid://ciknffhgvlt0c" path="res://SunnyLand Assets/PNG/sprites/player/hurt/player-hurt-2.png" id="2_obguf"]
@@ -96,34 +95,6 @@ animations = [{
 "name": &"Run",
 "speed": 5.0
 }]
-
-[sub_resource type="Animation" id="Animation_202vs"]
-resource_name = "Dash"
-length = 0.5
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("AnimatedSprite2D:animation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [&"Dash"]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("AnimatedSprite2D:frame")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [0]
-}
 
 [sub_resource type="Animation" id="Animation_uad6k"]
 resource_name = "Death"
@@ -292,6 +263,34 @@ tracks/1/keys = {
 "values": [0, 1, 2, 3, 4, 5]
 }
 
+[sub_resource type="Animation" id="Animation_202vs"]
+resource_name = "Dash"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"Dash"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimatedSprite2D:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_tajb3"]
 _data = {
 "Dash": SubResource("Animation_202vs"),
@@ -304,9 +303,7 @@ _data = {
 }
 
 [node name="Player" type="CharacterBody2D"]
-z_index = 2
 script = ExtResource("1_yhu7u")
-ghostNode = ExtResource("2_b2qko")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-1.5, 4.5)
