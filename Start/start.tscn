@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=3 uid="uid://lx5oq0x6p5hx"]
 
 [ext_resource type="Script" path="res://Start/start.gd" id="1_1v875"]
-[ext_resource type="Texture2D" uid="uid://75lhjtv4qeuu" path="res://Assets/background.png" id="2_pnbow"]
+[ext_resource type="Texture2D" uid="uid://75lhjtv4qeuu" path="res://Assets/Background/title_background.png" id="2_pnbow"]
 [ext_resource type="FontFile" uid="uid://prrtsjm0hg3m" path="res://Assets/Game Fonts/Pixel Font/PressStart2P.ttf" id="3_l630r"]
 [ext_resource type="Texture2D" uid="uid://ch68pxijlnc5b" path="res://Assets/option_selected.png" id="4_h4674"]
 

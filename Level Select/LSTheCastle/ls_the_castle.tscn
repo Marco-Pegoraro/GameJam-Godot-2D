@@ -1,0 +1,39 @@
+[gd_scene load_steps=4 format=3 uid="uid://byv041mpjvpsu"]
+
+[ext_resource type="Texture2D" uid="uid://b1uel08elvswl" path="res://Assets/castle_bg_select.png" id="1_yyhsr"]
+[ext_resource type="FontFile" uid="uid://prrtsjm0hg3m" path="res://Assets/Game Fonts/Pixel Font/PressStart2P.ttf" id="2_lq2ec"]
+[ext_resource type="PackedScene" uid="uid://ct23w5vyksxt4" path="res://Utils/Back Button/back_button.tscn" id="3_8voav"]
+
+[node name="LSTheCastle" type="Node2D"]
+
+[node name="Background" type="Sprite2D" parent="."]
+position = Vector2(576, 324)
+scale = Vector2(0.822857, 0.50428)
+texture = ExtResource("1_yyhsr")
+
+[node name="Title" type="Label" parent="."]
+offset_top = 50.0
+offset_right = 1152.0
+offset_bottom = 110.0
+theme_override_colors/font_color = Color(0.501961, 0.105882, 0.32549, 1)
+theme_override_fonts/font = ExtResource("2_lq2ec")
+theme_override_font_sizes/font_size = 50
+text = "The Castle"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label" type="Label" parent="."]
+offset_top = 162.0
+offset_right = 1152.0
+offset_bottom = 648.0
+theme_override_colors/font_color = Color(0.501961, 0.105882, 0.32549, 1)
+theme_override_fonts/font = ExtResource("2_lq2ec")
+theme_override_font_sizes/font_size = 55
+text = "NOT DONE YET"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="BackButton" parent="." instance=ExtResource("3_8voav")]
+position = Vector2(70, 50)
+scale = Vector2(0.4, 0.5)
+windownBackRes = "res://Region Select/region_select.tscn"

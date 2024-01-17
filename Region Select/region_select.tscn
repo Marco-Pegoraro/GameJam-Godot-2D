@@ -1,6 +1,7 @@
-[gd_scene load_steps=7 format=3 uid="uid://bb030s4dj13p2"]
+[gd_scene load_steps=8 format=3 uid="uid://bb030s4dj13p2"]
 
-[ext_resource type="Texture2D" uid="uid://75lhjtv4qeuu" path="res://Assets/background.png" id="1_i4tnp"]
+[ext_resource type="Texture2D" uid="uid://75lhjtv4qeuu" path="res://Assets/Background/title_background.png" id="1_i4tnp"]
+[ext_resource type="PackedScene" uid="uid://ct23w5vyksxt4" path="res://Utils/Back Button/back_button.tscn" id="2_4f2jl"]
 [ext_resource type="PackedScene" uid="uid://buh0u0j6806rr" path="res://Region Select/Region East/regio_east.tscn" id="4_1ursg"]
 [ext_resource type="FontFile" uid="uid://prrtsjm0hg3m" path="res://Assets/Game Fonts/Pixel Font/PressStart2P.ttf" id="4_t53ff"]
 [ext_resource type="PackedScene" uid="uid://dx4wmbh2vebhq" path="res://Region Select/Region West/region_west.tscn" id="4_uestd"]
@@ -14,6 +15,11 @@ position = Vector2(576, 324)
 scale = Vector2(0.96, 0.864)
 texture = ExtResource("1_i4tnp")
 
+[node name="BackButton" parent="." instance=ExtResource("2_4f2jl")]
+position = Vector2(70, 50)
+scale = Vector2(0.4, 0.5)
+windownBackRes = "res://Start/start.tscn"
+
 [node name="Parchment" type="Sprite2D" parent="."]
 position = Vector2(330, 230)
 scale = Vector2(1.3, 1.3)
@@ -22,37 +28,67 @@ texture = ExtResource("5_5nvtg")
 [node name="RegionWest" parent="." instance=ExtResource("4_uestd")]
 position = Vector2(723, 298)
 
+[node name="WestTitle" type="Label" parent="."]
+offset_left = 95.0
+offset_top = 80.0
+offset_right = 515.0
+offset_bottom = 115.0
+theme_override_colors/font_color = Color(0.34902, 0.14902, 0.0431373, 1)
+theme_override_fonts/font = ExtResource("4_t53ff")
+theme_override_font_sizes/font_size = 32
+text = "Entrace Tower"
+
 [node name="WestText" type="Label" parent="."]
 offset_left = 95.0
-offset_top = 105.0
+offset_top = 125.0
 offset_right = 555.0
-offset_bottom = 355.0
+offset_bottom = 375.0
 theme_override_fonts/font = ExtResource("4_t53ff")
-text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ornare massa eget egestas purus viverra accumsan. Egestas maecenas pharetra convallis posuere morbi leo urna molestie at. Dictumst quisque sagittis purus sit amet. Quam quisque id diam vel."
+text = "The inaugural tower of Castle Eldoria, constructed in 1098, stood as a formidable bastion against invaders. Crafted from local stone, its soaring walls housed the lord's chambers and served as a strategic vantage point. The tower symbolized the stronghold's indomitable spirit, anchoring a legacy of medieval resilience."
 autowrap_mode = 3
 
 [node name="RegionMiddle" parent="." instance=ExtResource("4_ulfn7")]
 position = Vector2(913, 209)
 
+[node name="MiddleTitle" type="Label" parent="."]
+offset_left = 95.0
+offset_top = 80.0
+offset_right = 515.0
+offset_bottom = 115.0
+theme_override_colors/font_color = Color(0.34902, 0.14902, 0.0431373, 1)
+theme_override_fonts/font = ExtResource("4_t53ff")
+theme_override_font_sizes/font_size = 32
+text = "The Castle"
+
 [node name="MiddleText" type="Label" parent="."]
 offset_left = 95.0
-offset_top = 105.0
+offset_top = 125.0
 offset_right = 555.0
-offset_bottom = 355.0
+offset_bottom = 375.0
 theme_override_fonts/font = ExtResource("4_t53ff")
-text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ornare massa eget egestas purus viverra accumsan. Egestas maecenas pharetra convallis posuere morbi leo urna molestie at. Dictumst quisque sagittis purus sit amet. Quam quisque id diam vel."
+text = "The heart of Castle Eldoria, established in 1098, held the Great Hall, where feasts and councils unfolded beneath a grand vaulted ceiling. The central courtyard, enclosed by sturdy fortifications, echoed with the footsteps of knights and the pulse of daily life, epitomizing the castle's enduring unity."
 autowrap_mode = 3
 
 [node name="RegioEast" parent="." instance=ExtResource("4_1ursg")]
 position = Vector2(1025, 334)
 scale = Vector2(1, 0.9)
 
+[node name="EastTitle" type="Label" parent="."]
+offset_left = 95.0
+offset_top = 80.0
+offset_right = 515.0
+offset_bottom = 115.0
+theme_override_colors/font_color = Color(0.34902, 0.14902, 0.0431373, 1)
+theme_override_fonts/font = ExtResource("4_t53ff")
+theme_override_font_sizes/font_size = 32
+text = "Back Hall"
+
 [node name="EastText" type="Label" parent="."]
 offset_left = 95.0
-offset_top = 105.0
+offset_top = 125.0
 offset_right = 555.0
-offset_bottom = 365.0
+offset_bottom = 375.0
 theme_override_fonts/font = ExtResource("4_t53ff")
-text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ornare massa eget egestas purus viverra accumsan. Egestas maecenas pharetra convallis posuere morbi leo urna molestie at. Dictumst quisque sagittis purus sit amet. Quam quisque id diam vel."
+text = "Nestled at the castle's rear, the Back Hall, built in 1105, concealed the entrance to enigmatic catacombs. Carved into the bedrock, these shadowy passages stored ancestral remains and concealed secrets. Guarded by a heavy portcullis, the entrance ensured the castle's depths remained shrouded in mystery."
 autowrap_mode = 3
 structured_text_bidi_override = 6

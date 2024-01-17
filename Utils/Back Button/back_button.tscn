@@ -1,0 +1,33 @@
+[gd_scene load_steps=4 format=3 uid="uid://ct23w5vyksxt4"]
+
+[ext_resource type="Texture2D" uid="uid://4wr1w5u5l22e" path="res://Assets/Buttons/select_button.png" id="1_8efss"]
+[ext_resource type="Script" path="res://Utils/Back Button/back_button.gd" id="1_lduub"]
+[ext_resource type="FontFile" uid="uid://prrtsjm0hg3m" path="res://Assets/Game Fonts/Pixel Font/PressStart2P.ttf" id="2_ocn24"]
+
+[node name="BackButton" type="Node2D"]
+script = ExtResource("1_lduub")
+
+[node name="Button" type="Button" parent="."]
+offset_left = -137.0
+offset_top = -68.0
+offset_right = 135.0
+offset_bottom = 64.0
+
+[node name="Sprite2D" type="Sprite2D" parent="Button"]
+position = Vector2(136, 66.5)
+scale = Vector2(0.391989, 0.586957)
+texture = ExtResource("1_8efss")
+
+[node name="Label" type="Label" parent="Button"]
+layout_mode = 0
+offset_left = -1.0
+offset_top = -1.0
+offset_right = 280.0
+offset_bottom = 134.0
+theme_override_fonts/font = ExtResource("2_ocn24")
+theme_override_font_sizes/font_size = 41
+text = "Return"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

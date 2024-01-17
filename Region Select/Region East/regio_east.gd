@@ -16,40 +16,43 @@ var parchment = get_node("../Parchment");
 @onready
 var areaText = get_node("../EastText");
 
-var teste = false;
+@onready
+var titleText = get_node("../EastTitle");
+
+var mouseHover = false;
 
 func _ready():
 	parchment.set_self_modulate(Color(1, 1, 1, 0));
 	areaText.set_self_modulate(Color(1, 1, 1, 0));
+	titleText.set_self_modulate(Color(1, 1, 1, 0));
 
 func _input(event):
 	if event is InputEventMouseButton:
-		if teste == true:
-			get_tree().change_scene_to_file("res://Level Select/level_select.tscn");
+		if mouseHover == true:
+			get_tree().change_scene_to_file("res://Level Select/LSBackHall/ls_back_hall.tscn");
 
 
 func _on_area_2d_mouse_entered():
 	await grow_area(growSize, .3);
 	self.z_index = 1;
-	teste = true;
+	mouseHover = true;
 	
 	while alphaMutable < alphaMax:
 		alphaMutable += 0.2;
 		await get_tree().create_timer(0.03).timeout;
 		parchment.set_self_modulate(Color(1, 1, 1, alphaMutable));
 		areaText.set_self_modulate(Color(1, 1, 1, alphaMutable));
+		titleText.set_self_modulate(Color(1, 1, 1, alphaMutable));
 
 
 func _on_area_2d_mouse_exited():
-	await grow_area(originalSize, .2);
+	await grow_area(originalSize, .1);
 	self.z_index = 0;
-	teste = false;
-	
-	while alphaMutable > alphaMin:
-		alphaMutable -= 0.2;
-		await get_tree().create_timer(0.03).timeout;
-		parchment.set_self_modulate(Color(1, 1, 1, alphaMutable));
-		areaText.set_self_modulate(Color(1, 1, 1, alphaMutable));
+	mouseHover = false;
+	alphaMutable = 0;
+	parchment.set_self_modulate(Color(1, 1, 1, alphaMutable));
+	areaText.set_self_modulate(Color(1, 1, 1, alphaMutable));
+	titleText.set_self_modulate(Color(1, 1, 1, alphaMutable));
 
 
 func grow_area(endSize: Vector2, duration: float) -> void:

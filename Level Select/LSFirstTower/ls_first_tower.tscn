@@ -1,0 +1,195 @@
+[gd_scene load_steps=6 format=3 uid="uid://c188fnt7oe2bn"]
+
+[ext_resource type="Script" path="res://Level Select/LSFirstTower/ls_first_tower.gd" id="1_igj0h"]
+[ext_resource type="Texture2D" uid="uid://b1uel08elvswl" path="res://Assets/castle_bg_select.png" id="2_vl2fb"]
+[ext_resource type="FontFile" uid="uid://prrtsjm0hg3m" path="res://Assets/Game Fonts/Pixel Font/PressStart2P.ttf" id="3_3h2p7"]
+[ext_resource type="Texture2D" uid="uid://4wr1w5u5l22e" path="res://Assets/Buttons/select_button.png" id="4_wg2fj"]
+[ext_resource type="PackedScene" uid="uid://ct23w5vyksxt4" path="res://Utils/Back Button/back_button.tscn" id="5_thvlk"]
+
+[node name="LSFirstTower" type="Node2D"]
+script = ExtResource("1_igj0h")
+
+[node name="Background" type="Sprite2D" parent="."]
+position = Vector2(576, 324)
+scale = Vector2(0.822857, 0.50428)
+texture = ExtResource("2_vl2fb")
+
+[node name="Title" type="Label" parent="."]
+offset_top = 50.0
+offset_right = 1152.0
+offset_bottom = 110.0
+theme_override_colors/font_color = Color(0.501961, 0.105882, 0.32549, 1)
+theme_override_fonts/font = ExtResource("3_3h2p7")
+theme_override_font_sizes/font_size = 50
+text = "First Tower"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ButtonLevel01" type="Button" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 71.0
+offset_top = 266.0
+offset_right = 241.0
+offset_bottom = 376.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="ButtonLevel01"]
+position = Vector2(85, 55)
+scale = Vector2(0.25, 0.5)
+texture = ExtResource("4_wg2fj")
+
+[node name="Label" type="Label" parent="ButtonLevel01"]
+layout_mode = 0
+offset_left = -2.0
+offset_top = -2.0
+offset_right = 172.0
+offset_bottom = 113.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("3_3h2p7")
+theme_override_font_sizes/font_size = 21
+text = "01"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ButtonLevel02" type="Button" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 275.0
+offset_top = 462.0
+offset_right = 445.0
+offset_bottom = 572.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="ButtonLevel02"]
+position = Vector2(85, 55)
+scale = Vector2(0.25, 0.5)
+texture = ExtResource("4_wg2fj")
+
+[node name="Label" type="Label" parent="ButtonLevel02"]
+layout_mode = 0
+offset_left = -2.0
+offset_top = -1.0
+offset_right = 173.0
+offset_bottom = 113.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("3_3h2p7")
+theme_override_font_sizes/font_size = 21
+text = "02
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ButtonLevel03" type="Button" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 490.0
+offset_top = 269.0
+offset_right = 660.0
+offset_bottom = 379.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Level 03"
+
+[node name="Sprite2D" type="Sprite2D" parent="ButtonLevel03"]
+position = Vector2(85, 56)
+scale = Vector2(0.25, 0.5)
+texture = ExtResource("4_wg2fj")
+
+[node name="Label" type="Label" parent="ButtonLevel03"]
+layout_mode = 0
+offset_left = -1.0
+offset_top = -2.0
+offset_right = 173.0
+offset_bottom = 113.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("3_3h2p7")
+theme_override_font_sizes/font_size = 21
+text = "03
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ButtonLevel04" type="Button" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 702.0
+offset_top = 466.0
+offset_right = 872.0
+offset_bottom = 576.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="ButtonLevel04"]
+position = Vector2(85, 56)
+scale = Vector2(0.25, 0.5)
+texture = ExtResource("4_wg2fj")
+
+[node name="Label" type="Label" parent="ButtonLevel04"]
+layout_mode = 0
+offset_left = -2.0
+offset_top = -1.0
+offset_right = 173.0
+offset_bottom = 114.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("3_3h2p7")
+theme_override_font_sizes/font_size = 21
+text = "04"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ButtonLevel05" type="Button" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 912.0
+offset_top = 278.0
+offset_right = 1082.0
+offset_bottom = 388.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="ButtonLevel05"]
+position = Vector2(85, 56)
+scale = Vector2(0.25, 0.5)
+texture = ExtResource("4_wg2fj")
+
+[node name="Label" type="Label" parent="ButtonLevel05"]
+layout_mode = 0
+offset_left = -2.0
+offset_top = -1.0
+offset_right = 173.0
+offset_bottom = 113.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("3_3h2p7")
+theme_override_font_sizes/font_size = 21
+text = "05"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="BackButton" parent="." instance=ExtResource("5_thvlk")]
+position = Vector2(70, 50)
+scale = Vector2(0.4, 0.5)
+windownBackRes = "res://Region Select/region_select.tscn"
+
+[connection signal="pressed" from="ButtonLevel01" to="." method="_on_button_level_01_pressed"]
+[connection signal="pressed" from="ButtonLevel02" to="." method="_on_button_level_02_pressed"]
+[connection signal="pressed" from="ButtonLevel03" to="." method="_on_button_level_03_pressed"]
+[connection signal="pressed" from="ButtonLevel04" to="." method="_on_button_level_04_pressed"]
+[connection signal="pressed" from="ButtonLevel05" to="." method="_on_button_level_05_pressed"]

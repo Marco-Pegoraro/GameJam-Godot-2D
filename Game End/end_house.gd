@@ -28,4 +28,4 @@ func _on_area_2d_body_entered(body):
 		if(Utils.playerPhase == 5):
 			Utils.phaseComplete05 = true;
 		
-		get_tree().change_scene_to_file("res://Level Select/level_select.tscn");
+		get_tree().change_scene_to_file("res://Level Select/LSFirstTower/ls_first_tower.tscn");
